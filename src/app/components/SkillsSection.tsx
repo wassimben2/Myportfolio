@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 const SkillsSection = () => {
   const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);
 
-
   const skills = [
     { 
       name: "React", 
@@ -72,7 +71,6 @@ const SkillsSection = () => {
       <h1 className="text-indigo-400 text-3xl sm:text-5xl font-bold mb-4 relative z-10">My Arsenal</h1>
       <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mb-12 relative z-10"></div>
       
-     
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full relative z-10">
         {skills.map((skill, index) => (
           <div 
@@ -81,7 +79,6 @@ const SkillsSection = () => {
             onMouseEnter={() => setHoveredSkill(index)}
             onMouseLeave={() => setHoveredSkill(null)}
           >
-          
             <div className={`
               relative transform-gpu transition-all duration-500 ease-out
               ${hoveredSkill === index ? 'scale-110 -rotate-2' : 'scale-100'}
@@ -93,7 +90,6 @@ const SkillsSection = () => {
               hover:rotate-3d
             `}>
               
-             
               <div className={`
                 absolute -top-4 -right-4 text-4xl
                 transition-all duration-300
@@ -102,19 +98,16 @@ const SkillsSection = () => {
                 {skill.particles}
               </div>
               
-             
               <h3 className="text-2xl font-bold text-white mb-4 tracking-wider">
                 {skill.name}
               </h3>
               
-            
               <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-4">
                 <span className="text-white font-semibold text-sm">
                   {skill.mastery}
                 </span>
               </div>
               
-             
               <div className="relative h-2 bg-white/20 rounded-full overflow-hidden mb-4">
                 <div 
                   className={`
@@ -125,7 +118,6 @@ const SkillsSection = () => {
                 ></div>
               </div>
               
-             
               {hoveredSkill === index && (
                 <div className="absolute inset-0 pointer-events-none">
                   {Array.from({ length: 5 }, (_, i) => (
@@ -144,18 +136,16 @@ const SkillsSection = () => {
                 </div>
               )}
               
-             
               <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/5 to-white/0 rounded-2xl pointer-events-none"></div>
             </div>
           </div>
         ))}
       </div>
       
-    
       <div className="mt-16 text-center relative z-10">
         <div className="relative">
           <p className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-xl font-bold animate-pulse">
-            "Crafting digital experiences that transcend imagination"
+            &quot;Crafting digital experiences that transcend imagination&quot;
           </p>
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
         </div>

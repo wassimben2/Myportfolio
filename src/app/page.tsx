@@ -181,8 +181,8 @@ export default function Home() {
     
     <div className="text-gray-300 text-center max-w-3xl space-y-6">
       <p className="leading-relaxed text-lg">
-        I’m a <span className="text-indigo-400 font-semibold">web developer</span> passionate about designing impactful digital experiences. 
-        My mission is to build websites that don’t just look beautiful, but also <span className="text-purple-400 font-bold">perform</span>.
+        I&apos;m a <span className="text-indigo-400 font-semibold">web developer</span> passionate about designing impactful digital experiences. 
+        My mission is to build websites that don&apos;t just look beautiful, but also <span className="text-purple-400 font-bold">perform</span>.
       </p>
       
       <p className="leading-relaxed text-lg">

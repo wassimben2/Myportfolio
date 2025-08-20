@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import "./globals.css";
 import RotatingText from "./components/RotatingText";
+import Image from "next/image";
 
 import SkillsSection from "./components/SkillsSection";
 import ProjectGallery from "./components/ProjectGallery";
@@ -163,10 +164,13 @@ export default function Home() {
 
   
   <div className="p-[4px] rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 animate-spin-slow">
-    <img 
-      src="ff.jpg" 
-      alt="Profile"
-      className="relative rounded-full w-36 h-36 sm:w-56 sm:h-56 object-cover border-4 border-gray-900 shadow-[0_0_35px_rgba(139,92,246,0.7)] group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500"
+    <Image
+  src="/hero.png"
+  alt="Hero Image"
+  width={500}   // choisis la largeur
+  height={500}  // et la hauteur
+  className="relative rounded-full w-36 h-36 sm:w-56 sm:h-56 object-cover border-4 border-gray-900 shadow-[0_0_35px_rgba(139,92,246,0.7)] group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500"
+
     />
   </div>
 </div>
@@ -293,7 +297,7 @@ export default function Home() {
   
   <div className="text-white text-center max-w-3xl mx-auto relative z-10">
     <p className="mb-12 text-base sm:text-lg p-3 sm:p-6 rounded-xl bg-white/5 backdrop-blur-sm shadow-inner border border-white/10 leading-relaxed">
-      Let's collaborate! Reach out via Reddit, and I'll get back to you quickly to discuss how we can bring your vision to life with stunning design and powerful functionality.
+      Let&apos;s collaborate! Reach out via Reddit, and I&apos;ll get back to you quickly to discuss how we can bring your vision to life with stunning design and powerful functionality.
     </p>
      <Link href="/contact">
     <div className="flex justify-center">

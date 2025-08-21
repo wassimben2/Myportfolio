@@ -1,5 +1,5 @@
+// src/app/components/ProjectGallery.tsx
 import React, { useState } from 'react';
-import Image from 'next/image'; // ✅ sécuriser le build Next.js
 
 interface Project {
   title: string;
@@ -15,7 +15,7 @@ const ProjectGallery: React.FC = () => {
       title: "Red Button Game",
       description: "A fun interactive game where you must avoid clicking the red button!",
       tech: "React, Next.js, Tailwind CSS",
-      image: "/red.png", // 🔹 doit être dans public/
+      image: "red.png",
       link: "red-button-game.vercel.app"
     },
     {
@@ -34,6 +34,7 @@ const ProjectGallery: React.FC = () => {
     }
   ];
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [activeProject, setActiveProject] = useState<number | null>(null);
 
   return (
@@ -42,7 +43,7 @@ const ProjectGallery: React.FC = () => {
         Featured Projects
       </h1>
       <div className="w-24 h-1 mx-auto bg-gradient-to-r from-violet-500 to-pink-500 rounded-full mb-12"></div>
-
+      
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <div 
@@ -52,11 +53,9 @@ const ProjectGallery: React.FC = () => {
             onMouseLeave={() => setActiveProject(null)}
           >
             <div className="relative">
-              <Image 
+              <img 
                 src={project.image} 
                 alt={project.title} 
-                width={500}
-                height={208} // approx 52*4
                 className="w-full h-52 object-cover"
               />
               <div 
@@ -73,7 +72,7 @@ const ProjectGallery: React.FC = () => {
             <div className="p-5">
               <p className="text-gray-300 text-sm leading-relaxed">{project.description}</p>
               <a
-                href={project.link.startsWith("#") ? "#" : `https://${project.link}`}
+                href={`https://${project.link}`} 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-block text-pink-400 hover:text-pink-300 font-semibold text-sm transition-colors"

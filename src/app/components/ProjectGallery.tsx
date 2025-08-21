@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Link from "next/link";
+import Image from 'next/image'; // ✅ sécuriser le build Next.js
 
 interface Project {
   title: string;
@@ -14,57 +14,77 @@ const ProjectGallery: React.FC = () => {
     {
       title: "Red Button Game",
       description: "A fun interactive game where you must avoid clicking the red button!",
-      tech: "React, Next",
-      image: "redbutton.png",
-      link: "https://redbutton.example.com",
+      tech: "React, Next.js, Tailwind CSS",
+      image: "/red.png", // 🔹 doit être dans public/
+      link: "red-button-game.vercel.app"
     },
     {
-      title: "Portfolio Website",
-      description: "My personal portfolio showcasing my projects and skills.",
-      tech: "Next.js, TypeScript, Tailwind CSS",
-      image: "portfolio.png",
-      link: "https://portfolio.example.com",
+      title: "Project 2",
+      description: "Coming soon...",
+      tech: "",
+      image: "https://i.pinimg.com/736x/6d/57/09/6d5709284622301416f0cb5a645093ee.jpg",
+      link: "#"
     },
     {
-      title: "Weather App",
-      description: "Get real-time weather updates for any city in the world.",
-      tech: "React, OpenWeather API, CSS",
-      image: "weather.png",
-      link: "https://weather.example.com",
-    },
+      title: "Project 3",
+      description: "Coming soon...",
+      tech: "",
+      image: "https://i.pinimg.com/736x/6d/57/09/6d5709284622301416f0cb5a645093ee.jpg",
+      link: "#"
+    }
   ];
 
+  const [activeProject, setActiveProject] = useState<number | null>(null);
+
   return (
-    <section id="projects" className="py-20 w-full max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold text-cyan-400 mb-10 text-center">
-        My Projects
-      </h2>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <div id="projects" className="mt-16 mx-auto w-full sm:w-11/12 md:w-5/6 lg:w-4/5">
+      <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-pink-500 text-4xl sm:text-5xl font-extrabold text-center mb-4">
+        Featured Projects
+      </h1>
+      <div className="w-24 h-1 mx-auto bg-gradient-to-r from-violet-500 to-pink-500 rounded-full mb-12"></div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-cyan-500/40 transition-all duration-300"
+          <div 
+            key={index} 
+            className="bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-pink-500/30 transition-all duration-300 hover:-translate-y-2"
+            onMouseEnter={() => setActiveProject(index)}
+            onMouseLeave={() => setActiveProject(null)}
           >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold">{project.title}</h3>
-              <p className="text-gray-400">{project.description}</p>
-              <p className="text-sm text-cyan-400 mt-2">{project.tech}</p>
-              <Link
-                href={project.link}
-                className="inline-block mt-4 text-cyan-400 hover:underline"
+            <div className="relative">
+              <Image 
+                src={project.image} 
+                alt={project.title} 
+                width={500}
+                height={208} // approx 52*4
+                className="w-full h-52 object-cover"
+              />
+              <div 
+                className={`absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end transition-opacity duration-300 ${
+                  activeProject === index ? 'opacity-100' : 'opacity-70'
+                }`}
               >
-                Visit Project →
-              </Link>
+                <div className="p-4">
+                  <h3 className="text-white text-lg font-bold">{project.title}</h3>
+                  <p className="text-gray-300 text-xs">{project.tech}</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-5">
+              <p className="text-gray-300 text-sm leading-relaxed">{project.description}</p>
+              <a
+                href={project.link.startsWith("#") ? "#" : `https://${project.link}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block text-pink-400 hover:text-pink-300 font-semibold text-sm transition-colors"
+              >
+                View Project →
+              </a>
             </div>
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 

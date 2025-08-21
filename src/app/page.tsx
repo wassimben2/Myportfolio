@@ -112,8 +112,8 @@ export default function Home() {
   Hi, I&apos;m Wassim
 </h1>
 
-{/* Texte repositionné ici */}
-<div className="mb-8">
+{/* Texte repositionné ici - bien centré */}
+<div className="flex justify-center mb-12 mt-8">
   <RotatingText
     staticText="A Web developer,"
     rotatingWords={["Dark mode lover", "Creative soul", "Pixel perfect", "Coffee lover"]}

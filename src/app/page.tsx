@@ -165,10 +165,10 @@ export default function Home() {
   
   <div className="p-[4px] rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 animate-spin-slow">
     <Image
-  src="/hero.png"
+  src="/ff.jpg"
   alt="Hero Image"
-  width={500}   // choisis la largeur
-  height={500}  // et la hauteur
+  width={500}  
+  height={500} 
   className="relative rounded-full w-36 h-36 sm:w-56 sm:h-56 object-cover border-4 border-gray-900 shadow-[0_0_35px_rgba(139,92,246,0.7)] group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500"
 
     />

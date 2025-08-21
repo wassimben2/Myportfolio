@@ -1,6 +1,4 @@
-// src/app/components/ProjectGallery.tsx
-import React from "react";
-import Image from "next/image"; // ✅ correction : utilisation de next/image
+import React, { useState } from 'react';
 import Link from "next/link";
 
 interface Project {
@@ -11,31 +9,31 @@ interface Project {
   link: string;
 }
 
-const projects: Project[] = [
-  {
-    title: "Red Button Game",
-    description: "A fun interactive game where you must avoid clicking the red button!",
-    tech: "React, Next.js, Tailwind CSS",
-    image: "/images/redbutton.png",
-    link: "https://redbutton.example.com",
-  },
-  {
-    title: "",
-    description: "My personal portfolio showcasing my projects and skills.",
-    tech: "Next.js, TypeScript, Tailwind CSS",
-    image: "/images/portfolio.png",
-    link: "https://portfolio.example.com",
-  },
-  {
-    title: "Weather App",
-    description: "Get real-time weather updates for any city in the world.",
-    tech: "React, OpenWeather API, CSS",
-    image: "/images/weather.png",
-    link: "https://weather.example.com",
-  },
-];
-
 const ProjectGallery: React.FC = () => {
+  const projects: Project[] = [
+    {
+      title: "Red Button Game",
+      description: "A fun interactive game where you must avoid clicking the red button!",
+      tech: "React, Next",
+      image: "redbutton.png",
+      link: "https://redbutton.example.com",
+    },
+    {
+      title: "Portfolio Website",
+      description: "My personal portfolio showcasing my projects and skills.",
+      tech: "Next.js, TypeScript, Tailwind CSS",
+      image: "portfolio.png",
+      link: "https://portfolio.example.com",
+    },
+    {
+      title: "Weather App",
+      description: "Get real-time weather updates for any city in the world.",
+      tech: "React, OpenWeather API, CSS",
+      image: "weather.png",
+      link: "https://weather.example.com",
+    },
+  ];
+
   return (
     <section id="projects" className="py-20 w-full max-w-6xl mx-auto">
       <h2 className="text-3xl font-bold text-cyan-400 mb-10 text-center">
@@ -47,11 +45,9 @@ const ProjectGallery: React.FC = () => {
             key={index}
             className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-cyan-500/40 transition-all duration-300"
           >
-            <Image
+            <img
               src={project.image}
               alt={project.title}
-              width={500}
-              height={300}
               className="w-full h-48 object-cover"
             />
             <div className="p-4">

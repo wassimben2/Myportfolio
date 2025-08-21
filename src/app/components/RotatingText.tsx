@@ -27,7 +27,7 @@ export default function RotatingText({
   
   // Style conditionnel basé sur la prop centered
   const containerClass = centered 
-    ? "flex items-center justify-center text-xl md:text-2xl font-light text-white" 
+    ? "flex items-center justify-center text-xl md:text-2xl font-light text-white -ml-8" 
     : "flex items-center text-xl md:text-2xl font-light text-white whitespace-nowrap absolute left-153 top-55";
   
   return (

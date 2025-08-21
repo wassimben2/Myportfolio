@@ -112,8 +112,8 @@ export default function Home() {
   Hi, I&apos;m Wassim
 </h1>
 
-{/* Texte repositionné ici - avec prop centered */}
-<div className="my-8">
+{/* Texte repositionné ici - SANS pousser les boutons vers le bas */}
+<div className="mb-4">
   <RotatingText
     staticText="A Web developer,"
     rotatingWords={["Dark mode lover", "Creative soul", "Pixel perfect", "Coffee lover"]}

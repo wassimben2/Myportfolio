@@ -108,12 +108,12 @@ export default function Home() {
 
 <div id="Port" className="relative w-full flex flex-col items-center justify-center text-center pt-20 sm:pt-32 mb-10">
  
-<h1 className="text-4xl sm:text-7xl font-bold text-gray-200 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] mb-4 px-4 hover:animate-pulse hover:text-cyan-300 hover:drop-shadow-[0_0_20px_rgba(34,211,238,0.8)] transition-all duration-200 cursor-pointer">
+<h1 className="text-4xl sm:text-7xl font-bold text-gray-200 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] mb-6 px-4 hover:animate-pulse hover:text-cyan-300 hover:drop-shadow-[0_0_20px_rgba(34,211,238,0.8)] transition-all duration-200 cursor-pointer">
   Hi, I&apos;m Wassim
 </h1>
 
-{/* Texte repositionné ici - SANS pousser les boutons vers le bas */}
-<div className="mb-2">
+{/* Texte repositionné ici - REMONTÉ */}
+<div className="mb-2 -mt-2">
   <RotatingText
     staticText="A Web developer,"
     rotatingWords={["Dark mode lover", "Creative soul", "Pixel perfect", "Coffee lover"]}
@@ -122,7 +122,7 @@ export default function Home() {
   />
 </div>
 
-  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 px-4">
+  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 px-4 -mt-2">
   <Link href="/project">
     <button className="bg-indigo-500 hover:bg-indigo-400 text-white font-semibold font-sans px-8 py-4 rounded-2xl shadow-[0_0_15px_rgba(129,140,248,0.6)] hover:shadow-[0_0_25px_rgba(129,140,248,0.9)] transition-all duration-300 ease-in-out hover:scale-105">
       <h1 className="text-lg tracking-wide">See My Work</h1>

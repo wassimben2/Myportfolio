@@ -22,15 +22,10 @@ export default function Home() {
   return (
    <main className="min-h-screen relative bg-white dark:bg-[#0f172a] transition-colors duration-500">
   
-
-
-
       <StarsBackground/>
       
-     
       <SocialBar />
      
-    
       <header className="w-full bg-[rgba(30,41,59,0.7)] backdrop-blur-md px-4 sm:px-6 py-4 flex flex-col shadow-md sticky top-0 z-50">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4 px-2 sm:px-4 py-2">
@@ -39,7 +34,6 @@ export default function Home() {
             </h1>
           </div>
 
-        
           <div className="block sm:hidden">
             <button 
               className="text-white p-2" 
@@ -52,7 +46,6 @@ export default function Home() {
             </button>
           </div>
 
-        
           <nav className="hidden sm:flex text-white space-x-4 md:space-x-6 font-bold">
             <a
               href="#about"
@@ -92,7 +85,6 @@ export default function Home() {
           </nav>
         </div>
 
-       
         {mobileMenuOpen && (
           <nav className="sm:hidden bg-[rgba(30,41,59,0.95)] text-white flex flex-col space-y-4 py-4 px-2 mt-2 rounded-md animate-fadeIn">
             <a href="#about" className="text-lg font-semibold px-3 py-2 hover:bg-indigo-800 rounded-md transition">
@@ -113,22 +105,21 @@ export default function Home() {
           </nav>
         )}
       </header>
+
 <div id="Port" className="relative w-full flex flex-col items-center justify-center text-center pt-20 sm:pt-32 mb-10">
  
 <h1 className="text-4xl sm:text-7xl font-bold text-gray-200 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] mb-6 px-4 hover:animate-pulse hover:text-cyan-300 hover:drop-shadow-[0_0_20px_rgba(34,211,238,0.8)] transition-all duration-200 cursor-pointer">
   Hi, I&apos;m Wassim
 </h1>
 
-
- 
-  <div className="absolute top-20 left-10 b">
-    <RotatingText
-      staticText="A Web developer,"
-      rotatingWords={["Dark mode lover", "Creative soul", "Pixel perfect", "Coffee lover"]}
-      interval={1500}
-    />
-  </div>
-
+{/* Texte repositionné ici */}
+<div className="mb-8">
+  <RotatingText
+    staticText="A Web developer,"
+    rotatingWords={["Dark mode lover", "Creative soul", "Pixel perfect", "Coffee lover"]}
+    interval={1500}
+  />
+</div>
 
   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 px-4">
   <Link href="/project">
@@ -181,7 +172,6 @@ export default function Home() {
   }
 `}</style>
 
-
     
     <div className="text-gray-300 text-center max-w-3xl space-y-6">
       <p className="leading-relaxed text-lg">
@@ -197,7 +187,6 @@ export default function Home() {
   </div>
 </div>
 
-     
       <SkillsSection />
 
     <div
@@ -279,8 +268,6 @@ export default function Home() {
   </div>
 </div>
 
-      
-      
       <ProjectGallery />
 
       <div 
@@ -315,10 +302,6 @@ export default function Home() {
   </div>
 </div>
  
- 
-
-
-    
       <footer className="w-full text-center text-gray-400 py-6 sm:py-8 bg-[#0f172a]">
         <p className="hover:text-indigo-400 transition-colors duration-300">© 2025 FlowState Creations. All Rights Reserved.</p>
       </footer>

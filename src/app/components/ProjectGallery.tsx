@@ -1,5 +1,4 @@
-// src/app/components/ProjectGallery.tsx
-import React, { useState } from 'react';
+import React from 'react';
 
 interface Project {
   title: string;
@@ -33,10 +32,6 @@ const ProjectGallery: React.FC = () => {
       link: "#"
     }
   ];
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [activeProject, setActiveProject] = useState<number | null>(null);
-
   return (
     <div id="projects" className="mt-16 mx-auto w-full sm:w-11/12 md:w-5/6 lg:w-4/5">
       <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-pink-500 text-4xl sm:text-5xl font-extrabold text-center mb-4">
@@ -48,9 +43,7 @@ const ProjectGallery: React.FC = () => {
         {projects.map((project, index) => (
           <div 
             key={index} 
-            className="bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-pink-500/30 transition-all duration-300 hover:-translate-y-2"
-            onMouseEnter={() => setActiveProject(index)}
-            onMouseLeave={() => setActiveProject(null)}
+            className="bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-pink-500/30 transition-all duration-300 hover:-translate-y-2 group"
           >
             <div className="relative">
               <img 
@@ -58,11 +51,7 @@ const ProjectGallery: React.FC = () => {
                 alt={project.title} 
                 className="w-full h-52 object-cover"
               />
-              <div 
-                className={`absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end transition-opacity duration-300 ${
-                  activeProject === index ? 'opacity-100' : 'opacity-70'
-                }`}
-              >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end opacity-70 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="p-4">
                   <h3 className="text-white text-lg font-bold">{project.title}</h3>
                   <p className="text-gray-300 text-xs">{project.tech}</p>

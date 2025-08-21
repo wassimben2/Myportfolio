@@ -20,7 +20,7 @@ const projects: Project[] = [
     link: "https://redbutton.example.com",
   },
   {
-    title: "Portfolio Website",
+    title: "",
     description: "My personal portfolio showcasing my projects and skills.",
     tech: "Next.js, TypeScript, Tailwind CSS",
     image: "/images/portfolio.png",

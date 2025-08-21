@@ -108,12 +108,12 @@ export default function Home() {
 
 <div id="Port" className="relative w-full flex flex-col items-center justify-center text-center pt-20 sm:pt-32 mb-10">
  
-<h1 className="text-4xl sm:text-7xl font-bold text-gray-200 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] mb-6 px-4 hover:animate-pulse hover:text-cyan-300 hover:drop-shadow-[0_0_20px_rgba(34,211,238,0.8)] transition-all duration-200 cursor-pointer">
+<h1 className="text-4xl sm:text-7xl font-bold text-gray-200 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] mb-4 px-4 hover:animate-pulse hover:text-cyan-300 hover:drop-shadow-[0_0_20px_rgba(34,211,238,0.8)] transition-all duration-200 cursor-pointer">
   Hi, I&apos;m Wassim
 </h1>
 
 {/* Texte repositionné ici - SANS pousser les boutons vers le bas */}
-<div className="mb-4">
+<div className="mb-2">
   <RotatingText
     staticText="A Web developer,"
     rotatingWords={["Dark mode lover", "Creative soul", "Pixel perfect", "Coffee lover"]}
